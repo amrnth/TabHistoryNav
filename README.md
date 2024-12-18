@@ -4,7 +4,7 @@ I often lose track of which tabs I opened before the current tab while navigatin
 | Action                | MacOS Shortcut | Others Shortcut |
 |-----------------------|----------------|-----------------|
 | Go back in history    | Ctrl+Z         | Alt+Z           |
-| Go forward in history | Ctrl+Z         | Alt+Z           |
+| Go forward in history | Ctrl+Shift+Z   | Alt+Shift+Z     |
 
 ### Tasks:
 
