@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "version": "1.0",
-    "name": "Tab History Navigation",
+    "name": "Tab History Navigator",
     "permissions": ["tabs", "activeTab"],
     "background":{
         "service_worker":"background.js"
