@@ -10,6 +10,7 @@ I often lose track of which tabs I opened before the current tab while navigatin
 
 
 - [x] Support back and forward actions
-- [ ] Support navigation to previously closed tabs
+- [x] Support navigation to previously closed tabs, and skipping closed tabs
 - [ ] Support Edge, Safari, Firefox
 - [ ] Publish to Chrome WebStore
+- [ ] Find a better key comb??
