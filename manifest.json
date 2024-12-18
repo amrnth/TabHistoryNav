@@ -9,7 +9,7 @@
     "commands":{
         "go-back-history":{
             "suggested_key":{
-                "default": "Alt+1",
+                "default": "Alt+Z",
                 "mac": "MacCtrl+Z"
             },
             "description": "Go back in history"
