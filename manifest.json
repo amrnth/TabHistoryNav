@@ -1,0 +1,18 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Tab History Navigation",
+    "permissions": ["tabs", "activeTab"],
+    "background":{
+        "service_worker":"background.js"
+    },
+    "commands":{
+        "go-back-history":{
+            "suggested_key":{
+                "default": "Alt+1",
+                "mac": "MacCtrl+Z"
+            },
+            "description": "Go back in history"
+        }
+    }
+}
