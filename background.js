@@ -7,9 +7,16 @@ function logHistory() {
     console.log("New Tab Pointer at index: ", tabPointer)
 }
 
-const activeTab = chrome.tabs
+function goToPointedTab() {
+    const newTabId = tabHistory[tabPointer]
 
-logHistory()
+    chrome.tabs.update(newTabId, {active: true}, () => {
+        console.log(`Tab with ID ${newTabId} is now active!`)
+    })
+
+    isTabActivationByCommand = true
+    logHistory()
+}
 
 chrome.tabs.onActivated.addListener(async (activeInfo) => {
     const {tabId} = activeInfo
@@ -33,14 +40,15 @@ chrome.commands.onCommand.addListener(async (command) => {
         if(tabHistory.length > 0 && tabPointer > 0){
             console.log("Going back in history...")
             tabPointer -= 1
-            const newTabId = tabHistory[tabPointer]
+            goToPointedTab()
+        }
+    }
 
-            chrome.tabs.update(newTabId, {active: true}, () => {
-                console.log(`Tab with ID ${newTabId} is now active!`)
-            })
-
-            isTabActivationByCommand = true
-            logHistory()
+    if(command == "go-forward-history"){
+        if(tabHistory.length > 1 && tabPointer < tabHistory.length - 1){
+            console.log("Going forward in history...")
+            tabPointer += 1
+            goToPointedTab()
         }
     }
 })

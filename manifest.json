@@ -13,6 +13,13 @@
                 "mac": "MacCtrl+Z"
             },
             "description": "Go back in history"
+        },
+        "go-forward-history":{
+            "suggested_key":{
+                "default": "Alt+Shift+Z",
+                "mac": "MacCtrl+Shift+Z"
+            },
+            "description": "Go forward in history"
         }
     }
 }
