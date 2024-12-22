@@ -7,6 +7,12 @@ function logHistory() {
     console.log("New Tab Pointer at index: ", tabPointer)
 }
 
+chrome.tabs.query({active: true}).then((tab) => {
+    tabHistory.push(tab[0].id)
+    tabPointer += 1
+    console.log("Current tab added to nav history!")
+})
+
 async function goToPointedTab(isGoingForward = false) {
     const newTabId = tabHistory[tabPointer]
 
