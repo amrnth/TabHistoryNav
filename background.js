@@ -10,7 +10,7 @@ function logHistory() {
 chrome.tabs.query({active: true}).then((tab) => {
     tabHistory.push(tab[0].id)
     tabPointer += 1
-    console.log("Current tab added to nav history!")
+    // console.log("Current tab added to nav history!")
 })
 
 async function goToPointedTab(isGoingForward = false) {
@@ -18,9 +18,9 @@ async function goToPointedTab(isGoingForward = false) {
 
     chrome.tabs.update(newTabId, {active: true}, (tab) => {
         if(tab){
-            console.log(`Tab with ID ${newTabId} is now active!`)
+            // console.log(`Tab with ID ${newTabId} is now active!`)
             isTabActivationByCommand = true
-            logHistory()
+            // logHistory()
         }else{
             if(isGoingForward){
                 tabPointer += 1
@@ -35,7 +35,7 @@ async function goToPointedTab(isGoingForward = false) {
 
 chrome.tabs.onActivated.addListener(async (activeInfo) => {
     const {tabId} = activeInfo
-    console.log("Active tab changed to Id: ", tabId)
+    // console.log("Active tab changed to Id: ", tabId)
     const tab = await chrome.tabs.get(tabId)
 
     if(tab && !isTabActivationByCommand){
@@ -47,13 +47,13 @@ chrome.tabs.onActivated.addListener(async (activeInfo) => {
         
     }
     isTabActivationByCommand = false
-    logHistory()
+    // logHistory()
 })
 
 chrome.commands.onCommand.addListener(async (command) => {
     if(command == "go-back-history"){
         if(tabHistory.length > 0 && tabPointer > 0){
-            console.log("Going back in history...")
+            // console.log("Going back in history...")
             tabPointer -= 1
             goToPointedTab()
         }
@@ -61,7 +61,7 @@ chrome.commands.onCommand.addListener(async (command) => {
 
     if(command == "go-forward-history"){
         if(tabHistory.length > 1 && tabPointer < tabHistory.length - 1){
-            console.log("Going forward in history...")
+            // console.log("Going forward in history...")
             tabPointer += 1
             goToPointedTab(true)
         }
