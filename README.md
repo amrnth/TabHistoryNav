@@ -14,5 +14,5 @@ I often lose track of which tabs I opened before the current tab while navigatin
 - [ ] Support Edge, Safari, Firefox
     - [x] Edge supported
     - [ ] Safari, Firefox - need to do some workarounds
-- [ ] Publish to Chrome WebStore
+- [x] Publish to Chrome WebStore - https://chromewebstore.google.com/detail/tab-history-navigator/cehcdplikdamjnijomdhjbfigdgmnbfm
 - [ ] Find a better key comb??
